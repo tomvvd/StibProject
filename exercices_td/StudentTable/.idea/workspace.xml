@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff8289dd-e660-488c-89ff-14fcdcab5b6b" name="Changes" comment="" />
+    <list default="true" id="ff8289dd-e660-488c-89ff-14fcdcab5b6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentTable.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StudentTable.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/resources/fxml/sort.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/src/main/java/org/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/src/main/java/org/example/PrimaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/src/main/java/org/example/SecondaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/src/main/resources/org/example/secondary.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/src/main/resources/org/example/sort.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/classes/org/example/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/classes/org/example/PrimaryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/classes/org/example/SecondaryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/classes/org/example/secondary.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/classes/org/example/sort.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../miniprojets/sorting2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +77,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thoma/Documents/Bachelier Informatique de gestion ESI/2ème année/Q4/ATLG4/sceneBuilder/HelloFXML&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/thoma/Documents/IntelliJProjects/atlg4/exercices_td/StudentTable&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
