@@ -10,7 +10,7 @@
         <columns>
           <TableColumn fx:id="colonneNum" prefWidth="75.0" text="Numéro" />
           <TableColumn fx:id="colonnePrenom" prefWidth="75.0" text="Prénom" />
-            <TableColumn fx:id="colonneNom" prefWidth="75.0" text="Nom" />
+           <TableColumn fx:id="colonneNom" prefWidth="75.0" text="Nom" />
         </columns>
       </TableView>
       <HBox alignment="CENTER_LEFT">
