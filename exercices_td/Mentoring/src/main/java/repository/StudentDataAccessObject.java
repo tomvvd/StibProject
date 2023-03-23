@@ -4,7 +4,9 @@ import config.ConfigManager;
 import dto.StudentDto;
 import exception.RepositoryException;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,9 +20,16 @@ public class StudentDataAccessObject implements DataAccessObject<Integer,Student
      * @param url
     **/
     StudentDataAccessObject(String url){
-        this.path = Paths.get(url);
+        this.path = Paths.get(new File(url).toString());
     }
 
+    /**
+     * Creates a new instance of StudentDao with a specific file.
+     * @param url
+     **/
+    StudentDataAccessObject(URI url){
+        this.path = Paths.get(url);
+    }
 
     private final Path path;
 

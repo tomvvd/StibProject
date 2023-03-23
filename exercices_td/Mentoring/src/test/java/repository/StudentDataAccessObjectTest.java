@@ -4,6 +4,8 @@ import dto.StudentDto;
 import exception.RepositoryException;
 import org.junit.jupiter.api.Test;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +18,11 @@ class StudentDataAccessObjectTest {
     private static final int KEY = 12_345;
     private static final String FILE_URL = "data/test_repo_students.txt";
 
-    private final String url;
+    private final URI url;
 
     private final List<StudentDto> all;
 
-    public StudentDataAccessObjectTest() {
+    public StudentDataAccessObjectTest() throws URISyntaxException {
         System.out.println("==== StudentDaoTest Constructor =====");
         bob = new StudentDto(KEY, "SquarePants", "SpongeBob");
         patrick = new StudentDto(99_999, "Star", "Patrick");
@@ -33,14 +35,112 @@ class StudentDataAccessObjectTest {
         all.add(new StudentDto(82_227, "Cote", "Molly"));
         all.add(bob);
 
-        url = getClass().getClassLoader()
-                .getResource(FILE_URL)
-                .getFile().substring(3);
+        url = getClass().getClassLoader().getResource(FILE_URL).toURI();
+    }
+
+
+    @Test
+    public void testInsertExist() throws Exception {
+        System.out.println("testInsertExist");
+        //Arrange
+        StudentDataAccessObject dao = new StudentDataAccessObject(url);
+        //Action
+        dao.insert(all.get(0));
+        //Assert
+        assertTrue(true);
+    }
+
+    @Test
+    public void testInsertNotExist() throws Exception {
+        System.out.println("testInsertNotExist");
+        //Arrange
+        StudentDto expected = new StudentDto(58444,"Van Tuycom", "Thomas");
+        StudentDataAccessObject dao = new StudentDataAccessObject(url);
+        //Action
+        dao.insert(expected);
+        StudentDto result = dao.get(58444);
+        //Assert
+        assertEquals(expected,result);
+    }
+
+    @Test
+    public void testInsertIncorrectParameter() throws Exception {
+        System.out.println("testInsertIncorrectParameter");
+        //Arrange
+        StudentDataAccessObject dao = new StudentDataAccessObject(url);
+        StudentDto incorrect = null;
+        //Assert
+        assertThrows(RepositoryException.class, () -> {
+            //Action
+            dao.insert(incorrect);
+        });
+    }
+
+    @Test
+    public void testInsertWhenFileNotFound() throws Exception {
+        System.out.println("testInsertWhenFileNotFound");
+        //Arrange
+        String url = "test/NoFile.txt";
+        //Assert
+        assertThrows(RepositoryException.class, () -> {
+            //Action
+            StudentDataAccessObject dao = new StudentDataAccessObject(url);
+            dao.insert(bob);
+        });
+    }
+
+    @Test
+    public void testDeleteExist() throws Exception {
+        System.out.println("testDeleteExist");
+        //Arrange
+        StudentDataAccessObject dao = new StudentDataAccessObject(url);
+        //Action
+        int code = all.get(0).getKey();
+        dao.delete(code);
+        //Assert
+        assertEquals(dao.get(code),null);
+    }
+
+    @Test
+    public void testDeleteNotExist() throws Exception {
+        System.out.println("testDeleteNotExist");
+        //Arrange
+        StudentDataAccessObject dao = new StudentDataAccessObject(url);
+        //Action
+        dao.delete(58444);
+        //Assert
+        assertEquals(dao.get(58444),null);
+    }
+
+    @Test
+    public void testDeleteIncorrectParameter() throws Exception {
+        System.out.println("testDeleteIncorrectParameter");
+        //Arrange
+        StudentDataAccessObject dao = new StudentDataAccessObject(url);
+        Integer incorrect = null;
+        //Assert
+        assertThrows(RepositoryException.class, () -> {
+            //Action
+            dao.delete(incorrect);
+        });
+    }
+
+    @Test
+    public void testDeleteWhenFileNotFound() throws Exception {
+        System.out.println("testDeleteWhenFileNotFound");
+        //Arrange
+        String url = "test/NoFile.txt";
+        //Assert
+        assertThrows(RepositoryException.class, () -> {
+            //Action
+            StudentDataAccessObject dao = new StudentDataAccessObject(url);
+            dao.delete(KEY);
+        });
     }
 
     @Test
     public void testGetExist() throws Exception {
-        System.out.println("testSelectExist");
+        System.out.println("testGetExist");
         //Arrange
         StudentDto expected = bob;
         System.out.println(url);
@@ -53,7 +153,7 @@ class StudentDataAccessObjectTest {
 
     @Test
     public void testGetNotExist() throws Exception {
-        System.out.println("testSelectNotExist");
+        System.out.println("testGetNotExist");
         //Arrange
         StudentDataAccessObject dao = new StudentDataAccessObject(url);
         //Action
@@ -64,7 +164,7 @@ class StudentDataAccessObjectTest {
 
     @Test
     public void testGetIncorrectParameter() throws Exception {
-        System.out.println("testSelectIncorrectParameter");
+        System.out.println("testGetIncorrectParameter");
         //Arrange
         StudentDataAccessObject dao = new StudentDataAccessObject(url);
         Integer incorrect = null;
@@ -77,7 +177,7 @@ class StudentDataAccessObjectTest {
 
     @Test
     public void testGetWhenFileNotFound() throws Exception {
-        System.out.println("testSelectWhenFileNotFound");
+        System.out.println("testGetWhenFileNotFound");
         //Arrange
         String url = "test/NoFile.txt";
         //Assert
@@ -118,27 +218,27 @@ class StudentDataAccessObjectTest {
 
     @Test
     public void testUpdateIncorrectParameter() throws Exception {
-        System.out.println("testSelectIncorrectParameter");
+        System.out.println("testUpdateIncorrectParameter");
         //Arrange
         StudentDataAccessObject dao = new StudentDataAccessObject(url);
-        Integer incorrect = null;
+        StudentDto incorrect = null;
         //Assert
         assertThrows(RepositoryException.class, () -> {
             //Action
-            dao.get(incorrect);
+            dao.update(incorrect);
         });
     }
 
     @Test
     public void testUpdateWhenFileNotFound() throws Exception {
-        System.out.println("testSelectWhenFileNotFound");
+        System.out.println("testUpdateWhenFileNotFound");
         //Arrange
         String url = "test/NoFile.txt";
         //Assert
         assertThrows(RepositoryException.class, () -> {
             //Action
             StudentDataAccessObject dao = new StudentDataAccessObject(url);
-            dao.get(KEY);
+            dao.update(bob);
         });
     }
 }
