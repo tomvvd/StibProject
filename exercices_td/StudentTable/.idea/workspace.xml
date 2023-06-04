@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff8289dd-e660-488c-89ff-14fcdcab5b6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../miniprojets/Sorting/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/model/Difficulty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../miniprojets/StibRide/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/g58594/atlg4/studenttable/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/g58594/atlg4/studenttable/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../miniprojets/Sorting/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/model/NbElem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/model/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/model/Sort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/model/SortRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/view/FxmlApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/view/FxmlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/java/g58594/atlg4/sorting/view/FxmlController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/resources/g58594/atlg4/sorting/sort.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../miniprojets/Sorting/src/main/resources/g58594/atlg4/sorting/sort.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
