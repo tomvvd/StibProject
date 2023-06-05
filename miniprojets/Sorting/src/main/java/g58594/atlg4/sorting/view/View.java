@@ -1,4 +1,6 @@
 package g58594.atlg4.sorting.view;
+import g58594.atlg4.sorting.controller.Controller;
+import g58594.atlg4.sorting.handler.SortHandler;
 import g58594.atlg4.sorting.model.Difficulty;
 import g58594.atlg4.sorting.model.Model;
 import g58594.atlg4.sorting.model.SortRecord;
@@ -14,7 +16,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class FxmlController implements Observer {
+public class View implements Observer {
     private ObservableList<XYChart.Data<Integer,Long>> bubbleData; //ensemble de mes points (=Data) sur le graphe
     private ObservableList<XYChart.Data<Integer,Long>> mergeData;
     @FXML
@@ -42,20 +44,24 @@ public class FxmlController implements Observer {
     @FXML
     private Button start;
 
-    @FXML
-    private void launchSorting(ActionEvent event){
-        resetProgressBar();
-        SortType sortType = this.sortChoice.getValue();
-        Difficulty diff = this.configurationChoice.getValue();
-        int nbThreads = this.threadSpinner.getValue();
-        this.model.startSorting(sortType,diff,nbThreads);
+    public View() {
     }
 
-    private Model model;
+    public SortType getSortType(){
+        return this.sortChoice.getValue();
+    }
 
-    public FxmlController(Model model) {
-        this.model = model;
-        model.register(this);
+    public Difficulty getDifficulty(){
+        return this.configurationChoice.getValue();
+    }
+
+    public int getNbThreads(){
+        return this.threadSpinner.getValue();
+    }
+
+    public void addHandlerButton(Controller controller) {
+        SortHandler handler = new SortHandler(controller);
+        start.setOnAction(handler);
     }
 
     private void initializeSpinner() {
@@ -104,7 +110,7 @@ public class FxmlController implements Observer {
         }
     }
 
-    private void resetProgressBar() {
+    public void resetProgressBar() {
         this.progressBar.setProgress(0);
     }
 

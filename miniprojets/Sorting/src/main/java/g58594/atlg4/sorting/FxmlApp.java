@@ -1,7 +1,8 @@
 package g58594.atlg4.sorting;
 
+import g58594.atlg4.sorting.controller.Controller;
 import g58594.atlg4.sorting.model.Model;
-import g58594.atlg4.sorting.view.FxmlController;
+import g58594.atlg4.sorting.view.View;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -17,10 +18,15 @@ public class FxmlApp extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sort.fxml"));
 
         Model model = new Model();
-
-        loader.setController(new FxmlController(model));
-
+        View view = new View();
+        model.register(view);
+        loader.setController(view);
         Parent root = loader.load();
+
+        Controller controller = new Controller(model,view);
+
+        view.addHandlerButton(controller);
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

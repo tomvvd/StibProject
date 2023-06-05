@@ -70,7 +70,7 @@
                             <tooltip>
                                 <Tooltip text="Indique la progression des tris" />
                             </tooltip></ProgressBar>
-                        <Button fx:id="start" mnemonicParsing="false" onAction="#launchSorting" text="Start">
+                        <Button fx:id="start" mnemonicParsing="false" text="Start">
                             <tooltip>
                                 <Tooltip text="Démarre les tris" />
                             </tooltip></Button>
