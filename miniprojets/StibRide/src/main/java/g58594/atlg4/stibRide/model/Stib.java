@@ -18,14 +18,11 @@ public class Stib implements Observable {
 
     private List<Observer> observers;
     private Graph graph;
-    private List<String> favoriName;
 
     public Stib() {
         this.observers = new ArrayList<>();
         graph = new Graph();
-        favoriName = getAllFavorisName();
         try {
-            ConfigManager.getInstance().load();
             constructionGraph();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -58,6 +55,7 @@ public class Stib implements Observable {
     }
 
     public void searchShortestPath(String origin, String dest){
+        graph.resetNodes();
         Node originNode = graph.getNode(origin);
         graph = AlgoDijkstra.calculateShortestPathFromSource(graph,originNode);
         Node destNode = graph.getNode(dest);
@@ -80,7 +78,7 @@ public class Stib implements Observable {
         return names;
     }
 
-    private List<String> getAllFavorisName() {
+    public List<String> getAllFavorisName() {
         List<String> favoris = new ArrayList<>();
         try {
             FavoriRepository favoriRepository = new FavoriRepository();
@@ -92,10 +90,6 @@ public class Stib implements Observable {
             System.out.println(ex.getMessage());
         }
         return favoris;
-    }
-
-    public List<String> getFavoriName() {
-        return favoriName;
     }
 
     @Override

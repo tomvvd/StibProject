@@ -110,18 +110,25 @@ public class View {
     }
 
     public void displayPath(Node destination) {
-        Platform.runLater(() -> {
-            table.getItems().clear();
-            List<Node> path = destination.getShortestPath();
-            for(Node n : path) {
-                table.getItems().add(n);
-            }
-            table.getItems().add(destination);
-        });
+        table.getItems().clear();
+        List<Node> path = destination.getShortestPath();
+        for(Node n : path) {
+            table.getItems().add(n);
+        }
+        table.getItems().add(destination);
     }
 
     public void errorMessage() {
         Label label = new Label("Soit vous avez oublié d'entrer un nom pour votre nouveau favori, soit ce nom existe déjà !");
+        Pane pane = new Pane(label);
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.getDialogPane().setContent(pane);
+        alert.showAndWait();
+    }
+
+    public void errorSearch() {
+        Label label = new Label("Aucune valeur pour origine ou/et destination !");
         Pane pane = new Pane(label);
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Erreur");

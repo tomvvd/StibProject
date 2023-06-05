@@ -1,6 +1,8 @@
 package g58594.atlg4.stibRide;
 
+import g58594.atlg4.stibRide.model.ConfigManager;
 import g58594.atlg4.stibRide.model.Stib;
+import g58594.atlg4.stibRide.model.dao.DBManager;
 import g58594.atlg4.stibRide.presenter.Presenter;
 import g58594.atlg4.stibRide.view.View;
 import javafx.application.Application;
@@ -18,6 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        ConfigManager.getInstance().load();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("stib.fxml"));
 
         Stib stib = new Stib();

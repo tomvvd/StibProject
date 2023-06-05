@@ -8,6 +8,8 @@ import g58594.atlg4.stibRide.model.repository.RepositoryException;
 import g58594.atlg4.stibRide.util.Observer;
 import g58594.atlg4.stibRide.view.View;
 
+import java.util.List;
+
 public class Presenter implements Observer {
     private Stib stib;
     private View view;
@@ -19,13 +21,17 @@ public class Presenter implements Observer {
 
     public void initializeSearchBox() {
         view.setUpStation(stib.getAllStationsName());
-        view.setUpFavori(stib.getFavoriName());
+        view.setUpFavori(stib.getAllFavorisName());
     }
 
     public void searchShortestPath(){
         String origin = view.getOrigin();
         String dest = view.getDestination();
-        stib.searchShortestPath(origin,dest);
+        if(origin==null || dest==null){
+            view.errorSearch();
+        }else {
+            stib.searchShortestPath(origin, dest);
+        }
     }
 
     @Override
@@ -41,7 +47,7 @@ public class Presenter implements Observer {
             FavoriDto favoriDto = favoriRepository.get(favori);
             view.changeValueOriginDest(favoriDto.getOrigin(),favoriDto.getDestination());
         } catch (RepositoryException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -53,7 +59,7 @@ public class Presenter implements Observer {
         try {
             favoriRepository.modify(favori,newOrigin,newDest);
         } catch (RepositoryException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -62,24 +68,27 @@ public class Presenter implements Observer {
         FavoriRepository favoriRepository = new FavoriRepository();
         try {
             favoriRepository.delete(favori);
-            stib.getFavoriName().remove(favori);
+            view.setUpFavori(stib.getAllFavorisName());
         } catch (RepositoryException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 
     public void addFavori() {
         String favori = view.getNewNameFav();
-        if(stib.getFavoriName().contains(favori) || favori.equals("")){
-            view.errorMessage();
-        }
         String origin = view.getOrigin();
         String dest = view.getDestination();
         FavoriRepository favoriRepository = new FavoriRepository();
         try {
-            favoriRepository.add(favori,origin,dest);
+            if(favoriRepository.contains(favori) || favori.equals("")){
+                view.errorMessage();
+            }
+            else {
+                favoriRepository.add(favori, origin, dest);
+                view.setUpFavori(stib.getAllFavorisName());
+            }
         } catch (RepositoryException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 }

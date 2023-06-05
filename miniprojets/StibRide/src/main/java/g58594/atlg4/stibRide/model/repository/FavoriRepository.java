@@ -16,6 +16,10 @@ public class FavoriRepository {
         this.favoriDao = FavoriDao.getInstance();
     }
 
+    public FavoriRepository(FavoriDao favoriDao) {
+        this.favoriDao = favoriDao;
+    }
+
     public FavoriDto get(String key) throws RepositoryException {
         return favoriDao.get(key);
     }
@@ -25,7 +29,7 @@ public class FavoriRepository {
     }
 
     public boolean contains(String key) throws RepositoryException {
-        return favoriDao.get(key) != null;
+        return get(key) != null;
     }
 
     public void modify(String key,String origin, String dest) throws RepositoryException {

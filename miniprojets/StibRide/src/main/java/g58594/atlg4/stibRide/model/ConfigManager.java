@@ -9,7 +9,7 @@ import java.util.Properties;
 public class ConfigManager {
     private final Properties prop;
     private final String url;
-    private static final String FILE = "g58594/atlg4/stibRide/config.properties";
+    private static final String FILE = "./config/config.properties";
     private ConfigManager(){
         prop = new Properties();
         url = getClass().getClassLoader().getResource(FILE).getFile();

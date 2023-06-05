@@ -33,4 +33,11 @@ public class Graph {
             nodes.add(nodeA);
         }
     }
+
+    public void resetNodes(){
+        for (Node node:nodes) {
+            node.setDistance(Integer.MAX_VALUE);
+            node.getShortestPath().clear();
+        }
+    }
 }
