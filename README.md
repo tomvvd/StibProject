@@ -1,6 +1,6 @@
 # Stib Ride
 
-Welcome to the README file of the project : Stib Ride. This document provides a brief description of the program.
+Welcome to the README file of the project : Stib Ride. This document provides a brief description of the program. This project is coded in Java and follows the MVP (Model-View-Presenter) architecture.
 
 ## Description
 
